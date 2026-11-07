@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://747yff70evp5"]
+
+[ext_resource type="Script" uid="uid://6xbutvktwms" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="FontFile" uid="uid://bv70fn4bi85ms" path="res://Comic Sans MS.ttf" id="2_0xm2m"]
+[ext_resource type="SpriteFrames" uid="uid://dmsq42705ko0v" path="res://mart.gif" id="3_h2yge"]
+[ext_resource type="Theme" uid="uid://da1yijseffavx" path="res://marttheme.tres" id="3_lquwl"]
+[ext_resource type="SpriteFrames" uid="uid://banr7j8cn1h5n" path="res://evilmart.gif" id="4_1bvp3"]
+
+[sub_resource type="Theme" id="Theme_ig7tw"]
+default_font = ExtResource("2_0xm2m")
+default_font_size = 50
+
+[node name="Root" type="Control" unique_id=864598043]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1235659405]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+color = Color(0, 0, 0.28235295, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1705499948]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=718450019]
+modulate = Color(0.49411765, 0.7607843, 1, 1)
+layout_mode = 2
+theme = SubResource("Theme_ig7tw")
+text = "ellie's Marts"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer" unique_id=1605099585]
+layout_mode = 2
+theme = ExtResource("3_lquwl")
+placeholder_text = "Mart's Name :DD"
+alignment = 1
+max_length = 30
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=2026832300]
+custom_minimum_size = Vector2(0, 68.64)
+custom_maximum_size = Vector2(-1, 61.575)
+layout_mode = 2
+theme = ExtResource("3_lquwl")
+text = "Send"
+
+[node name="Mart" type="AnimatedSprite2D" parent="." unique_id=1386084090]
+position = Vector2(250, 380)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_h2yge")
+animation = &"gif"
+
+[node name="EvilMart" type="AnimatedSprite2D" parent="." unique_id=1253486648]
+visible = false
+position = Vector2(225.00002, 370.00003)
+scale = Vector2(1.365, 1.365)
+sprite_frames = ExtResource("4_1bvp3")
+animation = &"gif"
+
+[node name="Label" type="Label" parent="." unique_id=372031905]
+layout_mode = 0
+offset_left = -486.0
+offset_top = 213.0
+offset_right = 235.5
+offset_bottom = 236.0
+scale = Vector2(2, 2)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,12 @@
+[gd_resource type="Theme" format=3 uid="uid://da1yijseffavx"]
+
+[ext_resource type="FontFile" uid="uid://bv70fn4bi85ms" path="res://Comic Sans MS.ttf" id="2_mbe66"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_272bh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mycd"]
+
+[resource]
+default_font = ExtResource("2_mbe66")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_272bh")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_7mycd")
