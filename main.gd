@@ -30,5 +30,13 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	if $VBoxContainer/LineEdit.text != "":
-		Websocketclient.socket.send_text($VBoxContainer/LineEdit.text)
+		var martsleft = $VBoxContainer/HBoxContainer/SpinBox.value
+		while martsleft != 0:
+			Websocketclient.socket.send_text($VBoxContainer/LineEdit.text)
+			martsleft -= 1
+	pass # Replace with function body.
+
+
+func _on_button_2_pressed() -> void:
+	Websocketclient.socket.send_text("/kill @a")
 	pass # Replace with function body.

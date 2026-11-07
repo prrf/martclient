@@ -40,12 +40,28 @@ placeholder_text = "Mart's Name :DD"
 alignment = 1
 max_length = 30
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=2026832300]
-custom_minimum_size = Vector2(0, 68.64)
-custom_maximum_size = Vector2(-1, 61.575)
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2080123394]
+layout_mode = 2
+alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer" unique_id=966464164]
+layout_mode = 2
+min_value = 1.0
+max_value = 200.0
+value = 1.0
+rounded = true
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=2026832300]
 layout_mode = 2
 theme = ExtResource("3_lquwl")
 text = "Send"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1581392076]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+theme = ExtResource("3_lquwl")
+text = "Quick kill button"
 
 [node name="Mart" type="AnimatedSprite2D" parent="." unique_id=1386084090]
 position = Vector2(250, 380)
@@ -62,12 +78,13 @@ animation = &"gif"
 
 [node name="Label" type="Label" parent="." unique_id=372031905]
 layout_mode = 0
-offset_left = -486.0
+offset_left = -500.0
 offset_top = 213.0
-offset_right = 235.5
+offset_right = 221.5
 offset_bottom = 236.0
 scale = Vector2(2, 2)
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
